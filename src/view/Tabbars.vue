@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <van-tabbar v-model="active" class="active_tab">
-      <van-tabbar-item v-for="(item,index) in tabbars" :key="index" @click="switchToTab(index,item.name)">
+      <van-tabbar-item v-for="(item,index) in tabbars" :key="index" @click="switchToTab(index,item.name)" :to="(item.name)">
         <span :class="currIndex == index ? active:''">{{item.title}}</span>
         <template slot="icon" slot-scope="props">
           <img :src="props.active ? item.active : item.normal">
@@ -37,7 +37,16 @@
         methods : {
           switchToTab(index, val) {
             this.currIndex = index;
-            this.$router.push({ path : val});
+            console.log(val)
+            this.$router.push({ path : val });
+          }
+        },
+        created() {
+          console.log(this.$route);
+          if (this.$route.name == "HomePage") {
+              this.active = 0;
+          } else if (this.$route.name == "PersonalCenter") {
+              this.active = 1;
           }
         }
     }

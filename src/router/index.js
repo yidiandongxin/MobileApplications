@@ -16,21 +16,46 @@ export default new Router({
     {
       path: '/',
       name: 'Tabbars',
-      component: Tabbars
+      component: () => import(/* webpackChunkName: "about" */ '../view/Tabbars.vue'),
+      children: [
+        {
+          path: 'HomePage',
+          name: 'HomePage',
+          meta: {
+            title: '诊疗服务',
+          },
+
+          component: () => import(/* webpackChunkName: "about" */ '../view/HomePage.vue')
+        },
+        {
+          path: 'PersonalCenter',
+          name: 'PersonalCenter',
+          meta: {
+            title: '个人中心',
+          },
+          component: () => import(/* webpackChunkName: "about" */ '../view/PersonalCenter.vue')
+        },
+      ]
     },
-    {
-      path: '/',
-      name: 'HomePage',
-      component: HomePage
-    },
-    {
-      path: '/',
-      name: 'PersonalCenter',
-      component: PersonalCenter
-    },
-    {
-      path:'/',
-      redirect:'Tabbar'
-    }
+
+    // {
+    //   path: '/',
+    //   name: 'Tabbars',
+    //   component: Tabbars
+    // },
+    // {
+    //   path: '/',
+    //   name: 'HomePage',
+    //   component: HomePage
+    // },
+    // {
+    //   path: '/',
+    //   name: 'PersonalCenter',
+    //   component: PersonalCenter
+    // },
+    // {
+    //   path:'/',
+    //   redirect:'Tabbars'
+    // }
   ]
 })
