@@ -8,6 +8,7 @@
         </template>
       </van-tabbar-item>
     </van-tabbar>
+    <router-view/>
   </div>
 </template>
 
@@ -37,12 +38,10 @@
         methods : {
           switchToTab(index, val) {
             this.currIndex = index;
-            console.log(val)
             this.$router.push({ path : val });
           }
         },
         created() {
-          console.log(this.$route);
           if (this.$route.name == "HomePage") {
               this.active = 0;
           } else if (this.$route.name == "PersonalCenter") {
