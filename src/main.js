@@ -3,11 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+//vnat
 import vant from 'vant/lib/vant'
 import 'vant/lib/index.css'
-
-Vue.config.productionTip = false
 Vue.use(vant)
+// 使用vue-awesome-swiper轮播组件  https://github.com/surmon-china/vue-awesome-swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.min.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+Vue.config.productionTip = false
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

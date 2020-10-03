@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <van-tabbar v-model="active" class="active_tab">
-      <van-tabbar-item v-for="(item,index) in tabbars" :key="index" @click="switchToTab(index,item.name)" :to="(item.name)">
+      <van-tabbar-item v-for="(item,index) in tabbars" :key="index" @click="switchToTab(index,item.name)">
         <span :class="currIndex == index ? active:''">{{item.title}}</span>
         <template slot="icon" slot-scope="props">
           <img :src="props.active ? item.active : item.normal">
@@ -19,6 +19,7 @@
           return {
             active: 0,
             currIndex : 0,
+            path : '',
             tabbars: [
               {
                 name: "HomePage",
@@ -38,13 +39,15 @@
         methods : {
           switchToTab(index, val) {
             this.currIndex = index;
+            this.path = val;
             this.$router.push({ path : val });
           }
         },
-        created() {
-          if (this.$route.name == "HomePage") {
+        created() {//初始化Tabbar首页
+          if (this.$route.name === "HomePage" || this.$route.name === "Tabbars") {
               this.active = 0;
-          } else if (this.$route.name == "PersonalCenter") {
+              this.$router.push({ path : "HomePage" })
+          } else if (this.$route.name === "PersonalCenter") {
               this.active = 1;
           }
         }

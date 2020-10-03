@@ -19,8 +19,28 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+    //proxy: 'http://localhost:8080'   // 配置跨域处理,只有一个代理
+    proxy: { //配置多个代理
+      "/testIp": {
+        target: "http://192.168.200.34:8280",
+        changeOrigin: true,
+        ws: true,//websocket支持
+        secure: false,
+        pathRewrite: {
+          "^/testIp": "/"
+        }
+      },
+      "/elseIp": {
+        target: "http://197.0.0.2:8088",
+        changeOrigin: true,
+        //ws: true,//websocket支持
+        secure: false,
+        pathRewrite: {
+          "^/elseIp": "/"
+        }
+      }
+    },
 
-    
     /**
      * Source Maps
      */
