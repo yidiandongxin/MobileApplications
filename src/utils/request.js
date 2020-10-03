@@ -32,7 +32,7 @@ service.interceptors.request.use(config => {
 // 3.响应拦截器
 service.interceptors.response.use(response => {
   //接收到响应数据并成功后的一些共有的处理，关闭loading等
-
+  console.log("请求数据成功")
   return response
 }, error => {
   /***** 接收到异常响应的处理开始 *****/
@@ -85,7 +85,7 @@ service.interceptors.response.use(response => {
     if (JSON.stringify(error).includes('timeout')) {
       Toast.fail('服务器响应超时，请刷新当前页')
     }
-    error.message('连接服务器失败')
+    Toast.fail(this.error.message) //('连接服务器失败')
   }
 
   Toast.fail(error.message)

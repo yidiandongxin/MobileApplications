@@ -6,7 +6,8 @@ import http from "../utils/http";
  */
 
 // let resquest = '/testIp/request/'
-let resquest = 'http://localhost:8080/MobileApplications/static/mock/index.json'
+//let resquest = 'http://localhost:8080/MobileApplications/static/mock/index.json'
+let resquest = 'http://192.168.200.34:8280/HisService/SendHisRequestServlet'
 
 export default{
   getListAPI(params){
