@@ -16,7 +16,23 @@
         "sex":"女",
         "age":20,
         "class": "1班",
-        "Chinese":98
+        "Chinese":100
+      },
+      {
+        "id": "0003",
+        "name":"邓珊",
+        "sex":"女",
+        "age":22,
+        "class": "1班",
+        "Chinese":90
+      },
+      {
+        "id": "0004",
+        "name":"李四",
+        "sex":"男",
+        "age":23,
+        "class": "1班",
+        "Chinese":88
       }
     ]
   }

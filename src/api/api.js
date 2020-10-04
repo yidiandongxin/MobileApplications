@@ -6,7 +6,8 @@ import http from "../utils/http";
  */
 
 // let resquest = '/testIp/request/'
-//let resquest = 'http://localhost:8080/MobileApplications/static/mock/index.json'
+// let resquest = 'http://6b8a88f50d85.ngrok.io/dictDept'
+// let resquest = 'http://localhost:8080/dictDept'
 let resquest = 'http://localhost:8080/api/data'
 
 export default{

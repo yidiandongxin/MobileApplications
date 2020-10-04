@@ -11,8 +11,17 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api':'http://localhost:3000/'
+       '/api':'http://localhost:3000'
     },
+    // proxyTable: {
+    //   '/': {                       //需要代理的接口
+    //     target:'http://6b8a88f50d85.ngrok.io', //目标服务器
+    //     changeOrigin: true,　　　　　　 //是否跨域
+    //     pathRewrite: {
+    //       '^/': '/'             //重定向
+    //     }
+    //   }
+    // },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -21,27 +30,27 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-    //proxy: 'http://localhost:8080'   // 配置跨域处理,只有一个代理
-    proxy: { //配置多个代理
-      "/testIp": {
-        target: "http://192.168.200.34:8280",
-        changeOrigin: true,
-        ws: true,//websocket支持
-        secure: false,
-        pathRewrite: {
-          "^/testIp": "/"
-        }
-      },
-      "/elseIp": {
-        target: "http://197.0.0.2:8088",
-        changeOrigin: true,
-        //ws: true,//websocket支持
-        secure: false,
-        pathRewrite: {
-          "^/elseIp": "/"
-        }
-      }
-    },
+    // proxy: 'http://6b8a88f50d85.ngrok.io/dictDept',   // 配置跨域处理,只有一个代理
+    // proxy: { //配置多个代理
+    //   // "/testIp": {
+    //   //   target: "http://192.168.200.34:8280",
+    //   //   changeOrigin: true,
+    //   //   ws: true,//websocket支持
+    //   //   secure: false,
+    //   //   pathRewrite: {
+    //   //     "^/testIp": "/"
+    //   //   }
+    //   // },
+    //   "/api": {
+    //     target: "http://6b8a88f50d85.ngrok.io/dictDept",
+    //     changeOrigin: true,
+    //     //ws: true,//websocket支持
+    //     secure: false,
+    //     pathRewrite: {
+    //       "^/api": "/"
+    //     }
+    //   }
+    // },
 
     /**
      * Source Maps

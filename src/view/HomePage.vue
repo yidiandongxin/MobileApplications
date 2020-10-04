@@ -1,14 +1,17 @@
 <template>
   <div class="content">
+    <div class="content-top">
       <div class="Top-swiper">
-        <van-swipe class="my-swipe" :autoplay="5000" indicator-color="red"  style="height: 150px;" :show-indicators="false">
-          <van-swipe-item v-for="(item, index) in bannerImageList">
-            <van-image :src="item" style="border-radius: 10px"></van-image>
+        <van-swipe class="my-swipe" :autoplay="5000" :show-indicators="true">
+          <van-swipe-item v-for="(item, index) in bannerImageList" style="margin-top:50px">
+            <van-image :src="item" style="border-radius: 10px" class="banner-image"></van-image>
           </van-swipe-item>
         </van-swipe>
       </div>
+    </div>
 
-    <van-button type="primary" @click="getLoad()">获取数据</van-button>
+
+<!--    <van-button type="primary" @click="getLoad()">获取数据</van-button>-->
   </div>
 </template>
 
@@ -51,9 +54,42 @@
 </script>
 
 <style scoped>
+  .content {
+    background-color: #FBF9F9;
+    height: 1000px;
+  }
+
+  .content-top {
+    height: 29%;
+    background: #ffffff;
+  }
+
   .Top-swiper {
     width: 100%;
-    height: 200px;
-    box-sizing: border-box;
+    height: 150px;
+    background: url("../../src/assets/image/swiperImg/Background_Top.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .banner-image {
+    border-radius: 10px;
+    padding: 0px 20px;
+  }
+
+  .my-swipe >>> .van-swipe__indicator--active{
+    background: linear-gradient(to right,#8AC7FF,#5EB1FF);
+    width: 15px!important;
+    height: 5px!important;
+    border-radius: 50px;
+  }
+
+  .my-swipe >>> .van-swipe__indicator {
+    background-color: #d4d4d4;
+  }
+
+  .van-image__img {
+    width: 100%;
+    height: 150px;
   }
 </style>
