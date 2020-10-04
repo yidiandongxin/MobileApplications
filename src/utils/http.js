@@ -16,7 +16,6 @@ const http = {
   },
   post(url,params){
     console.log(url)
-    debugger
     const config = {
       method: 'post',
       url:url

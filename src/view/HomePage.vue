@@ -1,20 +1,21 @@
 <template>
   <div class="content">
       <div class="Top-swiper">
-        <van-swipe class="my-swipe" :autoplay="5000" indicator-color="red"  :show-indicators="false">
+        <van-swipe class="my-swipe" :autoplay="5000" indicator-color="red"  style="height: 150px;" :show-indicators="false">
           <van-swipe-item v-for="(item, index) in bannerImageList">
             <van-image :src="item" style="border-radius: 10px"></van-image>
           </van-swipe-item>
         </van-swipe>
       </div>
 
-    <van-button type="primary" @click="getLoad()">主要按钮</van-button>
+    <van-button type="primary" @click="getLoad()">获取数据</van-button>
   </div>
 </template>
 
 <script>
   import Tabbars from "./Tabbars";
-  import api from  '../api/api'
+  import api from  '../api/api';
+  import { Dialog } from 'vant';
     export default {
         name: "HomePage",
         data(){
@@ -30,6 +31,13 @@
             getLoad(){
               api.postFormAPI().then(res => {
                 console.log(res)
+                Dialog.alert({
+                  title: '标题',
+                  message: res.data.students[0].name,
+                  theme: 'round-button',
+                }).then(() => {
+                  // on close
+                });
               }).catch(err => {
                 console.log(err)
               })

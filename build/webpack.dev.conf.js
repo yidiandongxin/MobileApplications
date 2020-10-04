@@ -13,6 +13,9 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+/*模拟数据*/
+var express = require('express')
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -93,3 +96,32 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
+
+//express 配置server   模拟数据使用
+var apiServer = express()
+var bodyParser = require('body-parser')
+apiServer.use(bodyParser.urlencoded({ extended: true }))
+apiServer.use(bodyParser.json())
+var apiRouter = express.Router()
+var fs = require('fs')
+apiRouter.route('/:apiName') //接口路径
+  .all(function (req, res) {
+    fs.readFile('./index.json', 'utf8', function (err, data) { //读取接口文件
+    if (err) throw err
+    var data = JSON.parse(data)
+    if (data[req.params.apiName]) {
+      res.json(data[req.params.apiName])
+    }
+    else {
+      res.send('no such api name')
+    }
+  })
+})
+apiServer.use('/api', apiRouter);
+apiServer.listen(3000, function (err) {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log('Listening at http://localhost:' + 3000 + '\n')
+    })

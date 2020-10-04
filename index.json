@@ -1,9 +1,23 @@
 {
   "Msg": "200",
   "data": {
-    "indexList": [{
+    "students": [
+      {
       "id": "0001",
-      "title": "gongcw"
-    }]
+      "name":"方毅",
+      "sex":"男",
+      "age":21,
+      "class": "1",
+      "Chinese":100
+      },
+      {
+        "id": "0002",
+        "name":"黎倩",
+        "sex":"女",
+        "age":20,
+        "class": "1班",
+        "Chinese":98
+      }
+    ]
   }
 }

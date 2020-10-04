@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
+/*模拟数据交互，正常使用时不导入*/
+import VResource from 'vue-resource'
+Vue.use(VResource)
+
 //vnat
 import vant from 'vant/lib/vant'
 import 'vant/lib/index.css'
