@@ -14,7 +14,7 @@ import 'vant/lib/index.css'
 Vue.use(vant)
 // 使用vue-awesome-swiper轮播组件  https://github.com/surmon-china/vue-awesome-swiper
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.min.css'
+import 'swiper/css/swiper.min.css'
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.config.productionTip = false
 
