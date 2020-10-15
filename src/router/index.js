@@ -24,8 +24,15 @@ export default new Router({
           meta: {
             title: '诊疗服务',
           },
-
           component: () => import(/* webpackChunkName: "about" */ '../view/HomePage.vue')
+        },
+        {
+          path: 'HospitalIntroduction',
+          name: 'HospitalIntroduction',
+          meta: {
+            title: '医院介绍',
+          },
+          component: () => import(/* webpackChunkName: "about" */ '../view/HospitalIntroduction.vue')
         },
         {
           path: 'PersonalCenter',

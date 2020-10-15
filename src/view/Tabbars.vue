@@ -28,6 +28,12 @@
                 active: require("../assets/image/home_active.png")
               },
               {
+                name: "HospitalIntroduction",
+                title: "医院简介",
+                normal: require("../assets/image/hospital.png"),
+                active: require("../assets/image/hospital_active.png")
+              },
+              {
                 name: "PersonalCenter",
                 title: "个人中心",
                 normal: require("../assets/image/grzx.png"),
@@ -47,13 +53,18 @@
           if (this.$route.name === "HomePage" || this.$route.name === "Tabbars") {
               this.active = 0;
               this.$router.push({ path : "HomePage" })
-          } else if (this.$route.name === "PersonalCenter") {
+          } else if (this.$route.name === "HospitalIntroduction") {
               this.active = 1;
+          }else{
+            this.active = 2;
           }
         }
     }
 </script>
 
 <style scoped>
-
+  .van-tabbar-item--active {
+     color: #37CD87;
+    font-weight: 700;
+  }
 </style>
