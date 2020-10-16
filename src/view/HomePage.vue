@@ -45,8 +45,8 @@
     </div>
 <!--    <van-button type="primary" @click="getLoad()">获取数据</van-button>-->
     <div class="OtherAppointments">
-      <div class="OtherAppointments-title">其他服务</div>
       <div class="OtherAppointments-content">
+        <div class="OtherAppointments-title">其他服务</div>
         <van-grid :column-num="3" :border="false">
           <van-grid-item v-for="(value,index) in otherButton" :key="index" :icon="value.Image" :text="value.name" />
         </van-grid>
@@ -184,7 +184,7 @@
   .OtherAppointments-title {
     font-weight: 700;
     text-align: left;
-    margin: 10px 20px;
+    margin: 10px 16px 5px 16px;
   }
 
   .OtherAppointments-content {
