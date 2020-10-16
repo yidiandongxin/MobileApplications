@@ -62,7 +62,7 @@
   .MainOperation, .OtherOperation {
     padding: 5px;
     background: #ffffff;
-    margin: 30px 0px;
+    margin: 20px 0px;
     border-radius: 8px;
   }
   .van-cell__title {
