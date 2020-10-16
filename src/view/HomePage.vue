@@ -1,9 +1,6 @@
 <template>
   <div class="content">
     <div class="content-top">
-<!--      <div class="Top-swiper">-->
-<!--       <img class="content-top-background" src="../../src/assets/image/swiperImg/Background_Top.png">-->
-<!--      </div>-->
       <div class="content-swiper">
         <van-swipe class="my-swipe" :autoplay="10000" :show-indicators="true">
           <van-swipe-item v-for="(item, index) in bannerImageList" :key="index" style="padding-top:0px">
@@ -37,30 +34,9 @@
       <div class="content-ZQ">
         <van-row gutter="10">
           <van-col span="12">
-<!--            <div class="cardOne">-->
-<!--              <div class="cardOne-content">-->
-<!--                <div class="cardOne-title">疫苗预约专区</div>-->
-<!--                <div class="cardOne-tips">方便快捷</div>-->
-<!--                <div class="cardOne-QueryB">-->
-<!--                  <van-button color="linear-gradient(to right, #9DD28E, #5CC485)" round style="height: 30px">立即查看</van-button>-->
-<!--                </div>-->
-<!--                <van-image class="card-img" width="50" height="50" :src="require('../assets/image/ButtonImage/vaccinesHeadImg.png')" />-->
-<!--              </div>-->
-<!--            </div>-->
             <van-image :src="require('../assets/image/ButtonImage/YMYY.png')" />
           </van-col>
           <van-col span="12">
-<!--            <div class="cardTwo">-->
-<!--              <div class="cardOne-content">-->
-<!--                &lt;!&ndash;              &ndash;&gt;-->
-<!--                <div class="cardTwo-title">儿童保健查询</div>-->
-<!--                <div class="cardTwo-tips">在线查询</div>-->
-<!--                <div class="cardTwo-QueryB">-->
-<!--                  <van-button color="linear-gradient(to right, #FBAA6A, #F58123)" round style="height: 30px">立即查看</van-button>-->
-<!--                </div>-->
-<!--                <van-image class="card-img" width="50" height="50" :src="require('../assets/image/ButtonImage/ChildHeadImg.png')" />-->
-<!--              </div>-->
-<!--            </div>-->
             <van-image :src="require('../assets/image/ButtonImage/ETBJCX.png')" />
           </van-col>
         </van-row>
@@ -90,12 +66,6 @@
         data(){
             return {
               // swiperOption: {
-              //   // slidesPerView: 1.20,
-              //   // centeredSlides: true,
-              //   // loop: true,
-              //   // initialSlide: 0, //初始索引
-              //   // touchRatio: 1, //触摸距离与slide滑动距离的比率。
-              //   // spaceBetween: 0,
               //   loop: true,
               //   slidesPerView: 1.22,
               //   centeredSlides: true,
@@ -182,11 +152,9 @@
 <style scoped>
   .content {
     background-color: #F6F7F9;
-    /*height: 1000px;*/
   }
 
   .content-top {
-    /*height: 29%;*/
     background: #F6F7F9;
   }
 
@@ -225,56 +193,6 @@
     background: #ffffff;
     border-radius: 12px;
   }
-  /*.cardOne {*/
-  /*  background: linear-gradient(to right,#DAF3CE,#B7E7B8);*/
-  /*  padding: 10px;*/
-  /*  border-radius: 12px;*/
-  /*}*/
-
-  /*.cardTwo {*/
-  /*  background: linear-gradient(to right,#F4E7D0,#FFCFA9);*/
-  /*  padding: 10px;*/
-  /*  border-radius: 12px;*/
-  /*}*/
-
-  /*.cardOne-title, .cardTwo-title {*/
-  /*  color: #2AB46B;*/
-  /*  font-size: 16px;*/
-  /*  margin-bottom: 3px;*/
-  /*}*/
-
-  /*.cardTwo-title {*/
-  /*  color: #FA8C36;*/
-  /*}*/
-
-  /*.cardOne-content {*/
-  /*  text-align: right;*/
-  /*  margin-bottom: 3px;*/
-  /*  height: 80px;*/
-  /*}*/
-
-  /*.cardOne-tips, .cardTwo-tips {*/
-  /*  color: #2AB46B;*/
-  /*  font-size: 12px;*/
-  /*  margin-bottom: 12px;*/
-  /*}*/
-
-  /*.cardTwo-tips {*/
-  /*  color: #F58123;*/
-  /*}*/
-
-  /*.card-img {*/
-  /*  position: relative;*/
-  /*  left: -95px;*/
-  /*  top: -60px;*/
-  /*}*/
-  /*.Top-swiper {*/
-  /*  width: 100%;*/
-  /*  !*height: 150px;*!*/
-  /*  background: url("../../src/assets/image/swiperImg/Background_Top.png");*/
-  /*  background-repeat: no-repeat;*/
-  /*  background-size: 100% 100%;*/
-  /*}*/
 
   .banner-image {
     border-radius: 10px;
@@ -282,19 +200,19 @@
   }
 
   .my-swipe >>> .van-swipe__indicator--active{
-    background: linear-gradient(to right,#ffffff,#ffffff);
+    background: linear-gradient(to right,#F98C6B,#F98C6B);
     width: 15px!important;
     height: 5px!important;
     border-radius: 50px;
   }
 
   .my-swipe >>> .van-swipe__indicator {
-    background-color: #d4d4d4;
+    background-color: #F98C6B;
   }
 
   .my-swipe >>> .van-swipe__indicators {
     bottom: 50px;
-    left: 10%;
+    left: 50%;
   }
 
   .my-swipe >>> .van-image__img {
